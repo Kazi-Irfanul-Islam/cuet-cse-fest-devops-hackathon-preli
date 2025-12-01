@@ -48,3 +48,15 @@
 # Help:
 #   help - Display this help message
 
+start-dev:
+	docker-compose -f docker/compose.development.yaml up --build
+
+start-prod:
+	docker-compose -f docker/compose.production.yaml up --build -d
+
+stop:
+	docker-compose -f docker/compose.development.yaml down
+	docker-compose -f docker/compose.production.yaml down
+
+logs:
+	docker-compose -f docker/compose.development.yaml logs -f
